@@ -16,6 +16,7 @@ const Banner = () => {
         showThumbs={false}
         showStatus={false}
         centerMode={true}
+        showArrows={true}
       >
         <div>
           <div className="carousel-item">
