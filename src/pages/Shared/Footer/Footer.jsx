@@ -1,17 +1,22 @@
+import logo from '../../../assets/others/logo-full.png';
 
 const Footer = () => {
     return (
       <div>
-        <footer className="footer footer-center p-10 bg-base-200 text-base-content">
+        <footer className="footer p-10 bg-neutral text-neutral-content">
           <div>
-            {/* TODO: Logo Here */}
-            <p className="font-bold">
-              ACME Industries Ltd. <br />
-              Providing reliable tech since 1992
+            <img src={logo} alt="DesignTechIT" className="w-36" />
+            <p>
+              DesignTechIT
+              <br />
+              Prominent Design School Since 2002
             </p>
-            <p>Copyright © 2023 - All right reserved</p>
+            <p>Address: Oxford Mission Road, Barishal, Bangladesh</p>
+            <p>Email: dtitbsl@gmail.com / mtbbsl@gmail.com</p>
+            <p>Contact: +88 01711 933940, +88 01611 933940</p>
           </div>
           <div>
+            <span className="footer-title">Social</span>
             <div className="grid grid-flow-col gap-4">
               <a>
                 <svg
@@ -47,6 +52,14 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
+          </div>
+        </footer>
+        <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+          <div>
+            <p>
+              Copyright © {new Date().getFullYear()} - All right reserved by
+              DesignTechIT
+            </p>
           </div>
         </footer>
       </div>
