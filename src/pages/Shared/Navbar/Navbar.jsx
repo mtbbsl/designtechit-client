@@ -1,3 +1,5 @@
+import logomini from '../../../assets/others/logo-mini.png';
+
 const Navbar = () => {
   const navOptions = (
     <>
@@ -41,13 +43,16 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">DesignTechIT</a>
+          <a className="btn btn-ghost normal-case text-xl">
+            <img src={logomini} alt="Logo" className="w-10" />
+            DesignTechIT
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn">Login</a>
         </div>
       </div>
     </>
