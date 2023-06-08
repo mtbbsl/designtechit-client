@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import login from "../../assets/others/login.png";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const Login = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+    // react hook form starts here
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => console.log(data);
+
+    // show password starts here
+    const [show, setShow] = useState(false);
     
     return (
       <div className="hero min-h-screen bg-base-200">
@@ -34,7 +39,7 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={show ? "text" : "password"}
                   {...register("password", {
                     required: true,
                     minLength: 6,
@@ -44,6 +49,19 @@ const Login = () => {
                   placeholder="password"
                   className="input input-bordered"
                 />
+                <p onClick={() => setShow(!show)}>
+                  <small>
+                    {show ? (
+                      <span className="label-text-alt link link-hover">
+                        Hide Password
+                      </span>
+                    ) : (
+                      <span className="label-text-alt link link-hover">
+                        Show Password
+                      </span>
+                    )}
+                  </small>
+                </p>
                 {errors.password?.type === "required" && (
                   <p className="text-red-600">Password is required</p>
                 )}
@@ -56,11 +74,6 @@ const Login = () => {
                     characters
                   </p>
                 )}
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Show password
-                  </a>
-                </label>
               </div>
               <div className="form-control mt-6">
                 <input
