@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 import login from "../../assets/others/login.png";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const {createUser} = useContext(AuthContext);
     
     const onSubmit = (data) => {
       console.log(data);
+      createUser(data.email, data.password)
+        .then(result => {
+          const loggedUser = result.user;
+          console.log(loggedUser);
+        })
     };
 
     // for password match

@@ -1,8 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import logomini from '../../../assets/others/logo-mini.png';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch(error => console.log(error));
+  }
 
   // Toggle theme code here
   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
@@ -24,15 +32,28 @@ const Navbar = () => {
   // Navbar menu starts here
   const navOptions = (
     <>
-      <li>
+      <li className="uppercase font-semibold">
         <Link to="/">Home</Link>
       </li>
-      <li>
-        <a>Instructors</a>
+      <li className="uppercase font-semibold">
+        <Link to="instructor">Instructors</Link>
       </li>
-      <li>
-        <a>Classes</a>
+      <li className="uppercase font-semibold">
+        <Link to="classes">Classes</Link>
       </li>
+      {user ? (
+        <>
+          <button onClick={handleLogOut} className="btn btn-ghost btn-sm">
+            Logout
+          </button>
+        </>
+      ) : (
+        <>
+          <li className="uppercase font-bold">
+            <Link to="/login">Login</Link>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -69,13 +90,13 @@ const Navbar = () => {
             DesignTechIT
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex items-center">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
 
-        <div className="navbar-end">
+        
           {/* Toggle Button for Theme Change */}
-          <div className='mr-4'>
+          <div className='navbar-end'>
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
               <input type="checkbox" onChange={handleToggle} checked={theme === "light" ? false : true} />
@@ -99,9 +120,7 @@ const Navbar = () => {
               </svg>
             </label>
           </div>
-
-          <Link to="/login" className="btn">Login</Link>
-        </div>
+        
       </div>
     </>
   );
