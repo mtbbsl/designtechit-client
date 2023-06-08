@@ -9,7 +9,7 @@ import img6 from "../../../assets/slider/ui-ux-design.jpg";
 
 const Banner = () => {
   return (
-    <div className="carousel carousel-center rounded-xl my-12">
+    <div className="carousel carousel-center my-10">
       <Carousel
         autoPlay={true}
         infiniteLoop={true}

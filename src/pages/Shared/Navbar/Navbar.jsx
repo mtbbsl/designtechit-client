@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import logomini from '../../../assets/others/logo-mini.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -24,7 +25,7 @@ const Navbar = () => {
   const navOptions = (
     <>
       <li>
-        <a>Home</a>
+        <Link to="/">Home</Link>
       </li>
       <li>
         <a>Instructors</a>
@@ -37,7 +38,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar h-20 sticky top-0 z-10 bg-base-300 bg-opacity-80 max-w-screen-xl">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -63,10 +64,10 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
             <img src={logomini} alt="Logo" className="w-10" />
             DesignTechIT
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
@@ -99,7 +100,7 @@ const Navbar = () => {
             </label>
           </div>
 
-          <a className="btn">Login</a>
+          <Link to="/login" className="btn">Login</Link>
         </div>
       </div>
     </>
