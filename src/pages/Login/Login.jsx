@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
 import login from "../../assets/others/login.png";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
     // react hook form starts here
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const {signIn} = useContext(AuthContext);
     
     const onSubmit = (data) => {
       console.log(data);
+      signIn(data.email, data.password)
+        .then(result => {
+          const user = result.user;
+          console.log(user);
+        })
     };
 
     // show password starts here
