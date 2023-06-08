@@ -6,7 +6,10 @@ import { useState } from "react";
 const Login = () => {
     // react hook form starts here
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = (data) => console.log(data);
+    
+    const onSubmit = (data) => {
+      console.log(data);
+    };
 
     // show password starts here
     const [show, setShow] = useState(false);

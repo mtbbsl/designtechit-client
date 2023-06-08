@@ -4,8 +4,12 @@ import { useForm } from "react-hook-form";
 
 const SignUp = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = (data) => console.log(data);
+    
+    const onSubmit = (data) => {
+      console.log(data);
+    };
 
+    // for password match
     const password = watch("password", "");
     
     return (
