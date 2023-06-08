@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import login from "../../assets/others/login.png";
+import google from "../../assets/others/google.gif";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -8,7 +9,7 @@ const Login = () => {
     // react hook form starts here
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const {signIn} = useContext(AuthContext);
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
     
     const onSubmit = (data) => {
       
@@ -18,6 +19,17 @@ const Login = () => {
           console.log(user);
           reset();
         })
+    };
+
+    const handleGoogleSignIn = () => {
+      signInWithGoogle()
+        .then((result) => {
+          const loggedUser = result.user;
+          console.log(loggedUser);
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
     };
 
     // show password starts here
@@ -95,6 +107,9 @@ const Login = () => {
                 />
               </div>
             </form>
+            <button onClick={handleGoogleSignIn} className="btn btn-ghost btn-wide mx-auto">
+              <img src={google} className="w-4"/> Login with Google
+            </button>
             <p className="text-center py-4">
               <small>
                 New Here? <Link to="/signup">Create an account</Link>{" "}
