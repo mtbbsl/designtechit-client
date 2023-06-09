@@ -1,7 +1,7 @@
 const ClassCard = ({ perClass }) => {
   const { image, name, instructor, price } = perClass;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+    <div className="card w-96 bg-base-200 shadow-xl mx-auto">
       <figure>
         <img src={image} className="object-cover w-96 h-64" />
       </figure>
@@ -10,7 +10,7 @@ const ClassCard = ({ perClass }) => {
         <p>Instructor: {instructor}</p>
         <p>Price: ${price}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Enroll</button>
+          <button className="btn btn-outline btn-success">Enroll</button>
         </div>
       </div>
     </div>
