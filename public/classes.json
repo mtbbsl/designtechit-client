@@ -1,0 +1,110 @@
+[
+  {
+    "_id": "642c155b2c4774f05c36eea1",
+    "image": "https://dcassetcdn.com/design_img/3877265/19317/25039179/zsvb6z6hkwtnsk85shmysvk929_image.png",
+    "name": "Logo Design",
+    "instructor": "Mahtab Mustakim",
+    "seats": 40,
+    "price": 1000,
+    "enrolled": 30
+  },
+  {
+    "_id": "642c155b2c4774f05c36eeb5",
+    "image": "https://dcassetcdn.com/design_img/3909705/872063/25743602/5qhepwswx1d7f6h60ynvzq3hzc_image.jpg",
+    "name": "Business Card Design",
+    "instructor": "Sadia Muntaha",
+    "seats": 40,
+    "price": 800,
+    "enrolled": 38
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee72",
+    "image": "https://dcassetcdn.com/design_img/3651244/125761/125761_20733365_3651244_8cdad66e_image.jpg",
+    "name": "Business Card Design",
+    "instructor": "Sabiha Mehjabeen Goongoon",
+    "seats": 40,
+    "price": 800,
+    "enrolled": 35 
+  },
+{
+    "_id": "642c155b2c4774f05c36ee8a",
+    "image": "https://dcassetcdn.com/design_img/183603/54493/54493_2132484_183603_image.jpg",
+    "name": "Banner Design",
+    "instructor": "Samiha Mehjabeen Rimjhim",
+    "seats": 40,
+    "price": 600,
+    "enrolled": 40
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee77",
+    "image": "https://dcassetcdn.com/design_img/3974934/64575/27288551/hxpbgj6qz7bxa148rjytvmbrg2_image.jpg",
+    "name": "Brochure Design",
+    "instructor": "Riyadh Faraji",
+    "seats": 40,
+    "price": 1000,
+    "enrolled": 32
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee8b",
+    "image": "https://dcassetcdn.com/design_img/934919/71684/71684_5292761_934919_image.jpg",
+    "name": "T-Shirt Design",
+    "instructor": "Abdullah Al Noman",
+    "seats": 40,
+    "price": 1000,
+    "enrolled": 33
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee95",
+    "image": "https://dcassetcdn.com/design_img/3634402/605006/605006_20199264_3634402_ffe8ff42_image.jpg",
+    "name": "Stationery Design",
+    "instructor": "Mahtab Mustakim",
+    "seats": 40,
+    "price": 2000,
+    "enrolled": 20
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee93",
+    "image": "https://dcassetcdn.com/design_img/2949983/78960/78960_16289988_2949983_8a3d03e7_image.png",
+    "name": "UI-UX Design",
+    "instructor": "Mahtab Mustakim",
+    "seats": 40,
+    "price": 1500,
+    "enrolled": 25
+  },
+  {
+    "_id": "642c155b2c4774f05c36e1a6",
+    "image": "https://dcassetcdn.com/design_img/3836534/470351/24089067/jzavf3xazk96cnz3nrtdytpdhv_image.jpg",
+    "name": "Book Cover Design",
+    "instructor": "Md. Emran",
+    "seats": 40,
+    "price": 1000,
+    "enrolled": 18
+  },
+    {
+    "_id": "642c155b2c4774f05c36ee6b",
+    "image": "https://dcassetcdn.com/design_img/3981612/1189482/27552559/ayqfq28180y30reen3fby8q78b_image.png",
+    "name": "Label Design",
+    "instructor": "Md. Emran",
+    "seats": 40,
+    "price": 500,
+    "enrolled": 25
+  },
+  {
+    "_id": "642c155b2c4774f05c36eea3",
+    "image": "https://dcassetcdn.com/design_img/3973585/521021/27244800/de309ag32zy6vnf38rwh95bpt6_image.jpg",
+    "name": "Billboard Design",
+    "instructor": "Mahtab Mustakim",
+    "seats": 40,
+    "price": 1200,
+    "enrolled": 35
+  },
+ {
+    "_id": "642c155b2c4774f05c36ee81",
+    "image": "https://dcassetcdn.com/design_img/2952674/43775/43775_16254547_2952674_e35de112_image.jpg",
+    "name": "Signage Design",
+    "instructor": "Sadia Muntaha",
+    "seats": 40,
+    "price": 1000,
+    "enrolled": 36
+  }
+]

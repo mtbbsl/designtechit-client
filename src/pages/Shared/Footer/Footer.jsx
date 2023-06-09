@@ -3,7 +3,7 @@ import logo from '../../../assets/others/logo-full.png';
 const Footer = () => {
     return (
       <div>
-        <footer className="footer p-10 bg-neutral text-neutral-content">
+        <footer className="footer p-10 bg-base-200">
           <div>
             <img src={logo} alt="DesignTechIT" className="w-36" />
             <p>
