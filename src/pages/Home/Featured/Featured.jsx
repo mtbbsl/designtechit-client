@@ -2,6 +2,7 @@
 import featuredImg from "../../../assets/slider/logo-design.jpg";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import "./Featured.css";
+import { Fade, Flip } from "react-awesome-reveal";
 
 const Featured = () => {
   return (
@@ -13,11 +14,17 @@ const Featured = () => {
         ></SectionTitle>
         <div className="md:flex justify-center items-center px-24 pb-24">
           <div className="md:w-1/2">
-            <img src={featuredImg} />
+            <Flip cascade>
+              <img src={featuredImg} />
+            </Flip>
           </div>
           <div className="md:w-1/2 md:ml-10 my-4 space-y-4">
             <p>May 22, 2023</p>
-            <p className="uppercase">The featured logo design class</p>
+            <p className="uppercase text-3xl">
+              <Fade delay={1e3} cascade damping={1e-1}>
+                The featured logo design class
+              </Fade>
+            </p>
             <p>
               The competitive price of $1000 makes it accessible to a wide range
               of individuals interested in honing their design skills. The class
