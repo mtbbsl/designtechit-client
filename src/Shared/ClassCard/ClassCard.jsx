@@ -10,7 +10,7 @@ const ClassCard = ({ perClass }) => {
         <p>Instructor: {instructor}</p>
         <p>Price: ${price}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-outline btn-success">Enroll</button>
+          <button className="btn btn-outline">Enroll</button>
         </div>
       </div>
     </div>

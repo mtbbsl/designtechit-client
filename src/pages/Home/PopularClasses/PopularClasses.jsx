@@ -8,7 +8,7 @@ const PopularClasses = () => {
     fetch("classes.json")
       .then((res) => res.json())
       .then((data) => {
-        const sortedClasses = data.sort((a, b) => b.enrolled - a.enrolled);
+        const sortedClasses = data.sort((a, b) => b.enroll - a.enroll);
         const topClasses = sortedClasses.slice(0, 6);
         setClasses(topClasses);
       });
@@ -17,8 +17,8 @@ const PopularClasses = () => {
   return (
     <section>
       <SectionTitle
-        subHeading={"based on the number of students"}
         heading={"Popular Classes"}
+        subHeading={"based on the number of students"}
       ></SectionTitle>
       <div className="grid grid-cols-1 mb-12 lg:grid-cols-3 gap-12">
         {classes.map((perClass) => (
