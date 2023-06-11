@@ -68,5 +68,12 @@
     "photo": "https://userphotos2.teacheron.com/1746742-12149.jpg",
     "email": "ferdous@gmail.com",
     "status": "Instructor"
+  },
+  {
+    "_id": "642c155b2c4774f05c36e8a1",
+    "name": "Foysol Ahmad",
+    "photo": "https://userphotos2.teacheron.com/1570529-95746.jpg",
+    "email": "foysol@gmail.com",
+    "status": "Instructor"
   }
 ]

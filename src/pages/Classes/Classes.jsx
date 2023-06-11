@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import classes from '../../assets/others/classes.jpg';
 
 const Classes = () => {
   return (
@@ -6,7 +7,10 @@ const Classes = () => {
       <Helmet>
         <title>DesignTechIT - Classes</title>
       </Helmet>
-      <h2 className="text-4xl text-center my-12">Classes</h2>
+      <div>
+        <img src={classes} alt="" />
+        <h2 className="text-4xl text-center my-12">Classes</h2>
+      </div>
     </div>
   );
 };

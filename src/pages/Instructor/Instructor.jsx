@@ -1,12 +1,36 @@
 import { Helmet } from "react-helmet";
+import coverImg from "../../assets/others/instructors.webp";
+import Cover from "../Shared/Cover/Cover";
+import { useEffect, useState } from "react";
+import InstructorProfile from "./InstructorProfile";
 
 const Instructor = () => {
+  const [instructor, setInstructor] = useState([]);
+
+  useEffect(() => {
+    fetch("users.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const instructors = data.filter((item) => item.status === "Instructor");
+        setInstructor(instructors);
+      });
+  }, []);
+
   return (
     <div>
       <Helmet>
         <title>DesignTechIT - Instructors</title>
       </Helmet>
-      <h2 className="text-4xl text-center my-12">Instructors</h2>
+      <Cover
+        img={coverImg}
+        title={"Our Instructors"}
+        msg={"Learn from our young, energetic, talented instructors."}
+      ></Cover>
+      <div className="grid grid-cols-1 px-12 md:px-6 lg:px-0 mb-12 md:grid-cols-2 lg:grid-cols-3 gap-12 my-12">
+        {instructor.map((inst) => (
+          <InstructorProfile key={inst._id} inst={inst}></InstructorProfile>
+        ))}
+      </div>
     </div>
   );
 };
