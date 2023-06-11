@@ -8,7 +8,7 @@ const Instructor = () => {
   const [instructor, setInstructor] = useState([]);
 
   useEffect(() => {
-    fetch("users.json")
+    fetch("http://localhost:5000/users")
       .then((res) => res.json())
       .then((data) => {
         const instructors = data.filter((item) => item.status === "Instructor");

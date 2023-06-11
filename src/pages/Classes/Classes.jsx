@@ -9,12 +9,12 @@ const Classes = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch("classes.json")
-    .then(res => res.json())
-    .then(data => {
-      const classes = data.filter((item) => item.status === "approved");
-      setClasses(classes);
-    })
+    fetch("http://localhost:5000/classes")
+      .then((res) => res.json())
+      .then((data) => {
+        const classes = data.filter((item) => item.status === "approved");
+        setClasses(classes);
+      });
   } , [])
 
   return (
