@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "642c155b2c4774f05c36eba1",
+    "name": "Mahtab Mustakim",
+    "photo": "https://i.ibb.co/nBJKw3g/avatar.jpg",
+    "email": "mtbbsl@gmail.com",
+    "status": "Admin"
+  },
+  {
+    "_id": "642c155b2c4774f05c36eca1",
+    "name": "Sadia Muntaha",
+    "photo": "https://i.ibb.co/MctTr83/mow.jpg",
+    "email": "dinabsl@gmail.com",
+    "status": "Student"
+  },
+  {
+    "_id": "642c155b2c4774f05c36eda1",
+    "name": "Sabiha Mehjabeen Goongoon",
+    "photo": "https://i.ibb.co/khXRwqb/Goongoon.jpg",
+    "email": "gngnbsl@gmail.com",
+    "status": "Student"
+  },
+  {
+    "_id": "642c155b2c4774f05c36e1a1",
+    "name": "Sabiha Mehjabeen Goongoon",
+    "photo": "https://i.ibb.co/nC5CmcL/Rimjhim.jpg",
+    "email": "gngnbsl@gmail.com",
+    "status": "Student"
+  },
+  {
+    "_id": "642c155b2c4774f05c36e2a1",
+    "name": "Sadia Muntaha",
+    "photo": "https://i.ibb.co/MctTr83/mow.jpg",
+    "email": "dinabsl@gmail.com",
+    "status": "Instructor"
+  },
+  {
+    "_id": "642c155b2c4774f05c36e3a1",
+    "name": "Hasan Al Mahmud",
+    "photo": "https://userphotos2.teacheron.com/540740-60825.JPEG",
+    "email": "hasan@gmail.com",
+    "status": "Instructor"
+  },
+  {
+    "_id": "642c155b2c4774f05c36e4a1",
+    "name": "Syed Muzahidul Islam",
+    "photo": "https://userphotos2.teacheron.com/1472476-47428.jpg",
+    "email": "muzahidul@gmail.com",
+    "status": "Instructor"
+  },
+  {
+    "_id": "642c155b2c4774f05c36e5a1",
+    "name": "Aanika Tubassum",
+    "photo": "https://userphotos2.teacheron.com/884965-35691f.jpg",
+    "email": "aanika@gmail.com",
+    "status": "Instructor"
+  },
+  {
+    "_id": "642c155b2c4774f05c36e6a1",
+    "name": "Shahana Akter",
+    "photo": "https://userphotos2.teacheron.com/1415460-58694.jpg",
+    "email": "shahana@gmail.com",
+    "status": "Instructor"
+  },
+  {
+    "_id": "642c155b2c4774f05c36e7a1",
+    "name": "Ferdous Wahid",
+    "photo": "https://userphotos2.teacheron.com/1746742-12149.jpg",
+    "email": "ferdous@gmail.com",
+    "status": "Instructor"
+  }
+]

@@ -20,7 +20,7 @@ const PopularClasses = () => {
         heading={"Popular Classes"}
         subHeading={"based on the number of students"}
       ></SectionTitle>
-      <div className="grid grid-cols-1 mb-12 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
         {classes.map((perClass) => (
           <ClassCard key={perClass._id} perClass={perClass}></ClassCard>
         ))}
