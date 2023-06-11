@@ -117,7 +117,7 @@
     "seat": 40,
     "price": 500,
     "enroll": 25,
-    "status": "approved"
+    "status": "pending"
   },
   {
     "_id": "642c155b2c4774f05c36eea3",
@@ -129,7 +129,7 @@
     "seat": 40,
     "price": 1200,
     "enroll": 35,
-    "status": "approved"
+    "status": "pending"
   },
   {
     "_id": "642c155b2c4774f05c36ee81",
@@ -141,6 +141,6 @@
     "seat": 40,
     "price": 1000,
     "enroll": 36,
-    "status": "approved"
+    "status": "denied"
   }
 ]

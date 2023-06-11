@@ -1,15 +1,38 @@
 import { Helmet } from "react-helmet";
-import classes from '../../assets/others/classes.jpg';
+import classImg from '../../assets/others/classes.jpg';
+import Cover from "../Shared/Cover/Cover";
+import { useState } from "react";
+import { useEffect } from "react";
+import ClassesCard from "./ClassesCard";
 
 const Classes = () => {
+  const [classes, setClasses] = useState([]);
+
+  useEffect(() => {
+    fetch("classes.json")
+    .then(res => res.json())
+    .then(data => {
+      const classes = data.filter((item) => item.status === "approved");
+      setClasses(classes);
+    })
+  } , [])
+
   return (
     <div>
       <Helmet>
         <title>DesignTechIT - Classes</title>
       </Helmet>
-      <div>
-        <img src={classes} alt="" />
-        <h2 className="text-4xl text-center my-12">Classes</h2>
+      <Cover
+        img={classImg}
+        title={"Our Classes"}
+        msg={
+          "Seats are limited. So hurry to select your desired class to enroll."
+        }
+      ></Cover>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 my-12">
+        {classes.map((item) => (
+          <ClassesCard key={item._id} item={item}></ClassesCard>
+        ))}
       </div>
     </div>
   );

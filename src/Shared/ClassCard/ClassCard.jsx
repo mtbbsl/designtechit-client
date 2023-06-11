@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const ClassCard = ({ perClass }) => {
   const { image, name, instructor, price } = perClass;
+  
   return (
     <div className="card w-96 bg-base-200 shadow-xl mx-auto">
       <figure>
@@ -10,7 +13,9 @@ const ClassCard = ({ perClass }) => {
         <p>Instructor: {instructor}</p>
         <p>Price: ${price}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-outline">Enroll</button>
+          <Link to="/enroll">
+            <button className="btn btn-outline">Enroll</button>
+          </Link>
         </div>
       </div>
     </div>
