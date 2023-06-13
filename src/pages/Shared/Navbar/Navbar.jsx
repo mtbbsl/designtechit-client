@@ -2,9 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import logomini from "../../../assets/others/logo-mini.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaShoppingBag } from "react-icons/fa";
+import useCart from "../../../hooks/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart();
 
   const handleLogOut = () => {
     logOut()
@@ -44,7 +47,10 @@ const Navbar = () => {
         <Link to="classes">Classes</Link>
       </li>
       <li className="uppercase font-semibold">
-        {user && <Link to="dashboard">Dashboard</Link>}
+        <Link to="/dashboard/myselectedclass">
+          <FaShoppingBag></FaShoppingBag>
+          <div>+{cart?.length || 0}</div>
+        </Link>
       </li>
     </>
   );
