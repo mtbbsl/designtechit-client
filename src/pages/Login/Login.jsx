@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/others/login.png";
-import google from "../../assets/others/google.gif";
+// import google from "../../assets/others/google.gif";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -16,7 +16,7 @@ const Login = () => {
     reset,
   } = useForm();
 
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
 
   // private route user redirect
   const navigate = useNavigate();
@@ -35,19 +35,19 @@ const Login = () => {
       });
   };
 
-  const handleGoogleSignIn = () => {
-    signInWithGoogle()
-      .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-      })
-      .catch((error) => {
-        console.error(error.message);
-      })
-      .finally(() => {
-        navigate(from, { replace: true });
-      });
-  };
+  // const handleGoogleSignIn = () => {
+  //   signInWithGoogle()
+  //     .then((result) => {
+  //       const loggedUser = result.user;
+  //       console.log(loggedUser);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error.message);
+  //     })
+  //     .finally(() => {
+  //       navigate(from, { replace: true });
+  //     });
+  // };
 
   // show password starts here
   const [show, setShow] = useState(false);
@@ -128,16 +128,14 @@ const Login = () => {
                 />
               </div>
             </form>
-            <button
+            {/* <button
               onClick={handleGoogleSignIn}
               className="btn btn-ghost btn-wide mx-auto"
             >
               <img src={google} className="w-4" /> Login with Google
-            </button>
+            </button> */}
             <p className="text-center py-4">
-              <small>
-                New Here? <Link to="/signup">Create an account</Link>{" "}
-              </small>
+              New Here? <Link to="/signup" className="hover:text-orange-500">Create an account</Link>
             </p>
             <SocialLogin></SocialLogin>
           </div>

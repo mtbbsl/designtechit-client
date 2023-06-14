@@ -26,7 +26,7 @@ const SignUp = () => {
 
         updateUserData(data.name, data.photo)
           .then(() => {
-            const saveUser = {name: data.name, email: data.email}
+            const saveUser = { name: data.name, email: data.email };
             fetch("http://localhost:5000/users", {
               method: "POST",
               headers: {
@@ -69,7 +69,7 @@ const SignUp = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold text-center">Please Login</h1>
+            <h1 className="text-5xl font-bold text-center">Please Sign up</h1>
             <img src={login} alt="Login Image" />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -173,9 +173,10 @@ const SignUp = () => {
               </div>
             </form>
             <p className="text-center py-4">
-              <small>
-                Already have an account? <Link to="/login">Please login</Link>{" "}
-              </small>
+              Already have an account?{" "}
+              <Link to="/login" className="hover:text-orange-500">
+                Please login
+              </Link>
             </p>
             <SocialLogin></SocialLogin>
           </div>
