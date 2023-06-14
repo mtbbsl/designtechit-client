@@ -25,7 +25,7 @@ const ManageUsers = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          if(user.status === "Admin"){
+          if(user.role === "Admin"){
             setDisabled(true);
           }
           else {
@@ -50,7 +50,7 @@ const ManageUsers = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          if (user.status === "Instructor") {
+          if (user.role === "Instructor") {
             setDisabled(true);
           } else {
             setDisabled(false);
@@ -88,7 +88,7 @@ const ManageUsers = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                  {user.status === "Admin" ? (
+                  {user.role === "Admin" ? (
                     "Admin"
                   ) : (
                     <button
@@ -101,7 +101,7 @@ const ManageUsers = () => {
                   )}
                 </td>
                 <td>
-                    {user.status === "Instructor" ? (
+                    {user.role === "Instructor" ? (
                     "Instructor"
                   ) : (
                   <button
