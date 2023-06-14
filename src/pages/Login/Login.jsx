@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   // react hook form starts here
@@ -138,6 +139,7 @@ const Login = () => {
                 New Here? <Link to="/signup">Create an account</Link>{" "}
               </small>
             </p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

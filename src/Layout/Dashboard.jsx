@@ -7,11 +7,16 @@ import {
   FaImage,
   FaLaptop,
   FaUser,
+  FaUsers,
+  FaSchool
 } from "react-icons/fa";
 import useCart from "../hooks/useCart";
 
 const Dashboard = () => {
   const [cart] = useCart();
+
+  // TODO: load data from the server to have dynamic isAdmin based on Data
+  const isAdmin = true;
 
   return (
     <div>
@@ -34,27 +39,51 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
-            <li>
-              <NavLink to="/dashboard/studenthome">
-                <FaHome></FaHome>Student Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/myselectedclass">
-                <FaShoppingBag></FaShoppingBag>My Selected Classes
-                <span>+{cart?.length || 0}</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/myenrolledclass">
-                <FaImage></FaImage>My Enrolled Classes
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/paymenthistory">
-                <FaWallet></FaWallet>Payment History
-              </NavLink>
-            </li>
+
+            {isAdmin ? (
+              <>
+                <li>
+                  <NavLink to="/dashboard/adminhome">
+                    <FaHome></FaHome>Admin Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/manageclass">
+                    <FaSchool></FaSchool>Manage Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/manageuser">
+                    <FaUsers></FaUsers>Manage Users
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink to="/dashboard/studenthome">
+                    <FaHome></FaHome>Student Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/myselectedclass">
+                    <FaShoppingBag></FaShoppingBag>My Selected Classes
+                    <span>+{cart?.length || 0}</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/myenrolledclass">
+                    <FaImage></FaImage>My Enrolled Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/paymenthistory">
+                    <FaWallet></FaWallet>Payment History
+                  </NavLink>
+                </li>
+              </>
+            )}
+
             <div className="divider"></div>
             <li>
               <NavLink to="/">
@@ -71,8 +100,6 @@ const Dashboard = () => {
                 <FaLaptop></FaLaptop>Classes
               </NavLink>
             </li>
-            <li></li>
-            <li></li>
           </ul>
         </div>
       </div>

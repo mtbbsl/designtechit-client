@@ -20,11 +20,11 @@ const Featured = () => {
           </div>
           <div className="md:w-1/2 md:ml-10 my-4 space-y-4">
             <p>May 22, 2023</p>
-            <p className="uppercase text-xl font-bold text-sky-500">
+            <div className="uppercase text-xl font-bold text-sky-500">
               <Fade delay={1e3} cascade damping={1e-1}>
                 The featured logo design class
               </Fade>
-            </p>
+            </div>
             <p>
               The competitive price of $1000 makes it accessible to a wide range
               of individuals interested in honing their design skills. The class
