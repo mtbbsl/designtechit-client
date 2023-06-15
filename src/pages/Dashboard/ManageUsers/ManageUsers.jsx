@@ -2,13 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const ManageUsers = () => {
   const [disabled, setDisabled] = useState(false);
 
+  const [axiosSecure] = useAxiosSecure(); // Carpa-1:
   const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch("http://localhost:5000/users");
-    return res.json();
+    const res = await axiosSecure.get("/users"); //Carpa-2: axiosSecure.get & Carpa-3: Omit base link
+    return res.data; // Carpa-4: Replace json() with data
   });
 
   const handleMakeAdmin = (user) => {
