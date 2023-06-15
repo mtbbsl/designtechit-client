@@ -9,7 +9,7 @@ const Classes = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://designtechit-server.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         const classes = data.filter((item) => item.status === "approved");

@@ -5,7 +5,7 @@ import InstructorCard from "../../../Shared/InstructorCard/InstructorCard";
 const PopularInstructor = () => {
     const [instructors, setInstructors] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:5000/classes")
+      fetch("https://designtechit-server.vercel.app/classes")
         .then((res) => res.json())
         .then((data) => {
           const sortedInstructor = data.sort((a, b) => b.instructor - a.instructor);

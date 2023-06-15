@@ -5,7 +5,7 @@ import ClassCard from "../../../Shared/ClassCard/ClassCard";
 const PopularClasses = () => {
   const [classes, setClasses] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://designtechit-server.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         const sortedClasses = data.sort((a, b) => b.enroll - a.enroll);

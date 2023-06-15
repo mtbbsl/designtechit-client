@@ -15,7 +15,7 @@ const ClassesCard = ({ item }) => {
     console.log(item);
     if (user && user.email) {
       const cartItem = {classItemId: _id, name, image, price, instructor, email: user.email}
-      fetch("http://localhost:5000/carts", {
+      fetch("https://designtechit-server.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
