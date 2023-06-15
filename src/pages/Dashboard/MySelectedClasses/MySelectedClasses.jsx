@@ -34,11 +34,14 @@ const MySelectedClasses = () => {
   };
 
   return (
-    <div>
+    <div className="w-full px-10">
       <Helmet>
         <title>Dashboard - Selected Classes</title>
       </Helmet>
-      <SectionTitle heading={"My Selected Classes"} subHeading={"Student Dashboard"}></SectionTitle>
+      <SectionTitle
+        heading={"My Selected Classes"}
+        subHeading={"Student Dashboard"}
+      ></SectionTitle>
       <div className="uppercase font-semibold h-16 items-center flex justify-between">
         <h3 className="text-2xl">Total Classes: {cart.length}</h3>
         <h3 className="text-2xl">Total Price: ${total}</h3>

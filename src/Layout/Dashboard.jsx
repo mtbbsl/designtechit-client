@@ -10,6 +10,7 @@ import {
   FaUsers,
   FaSchool,
   FaBook,
+  FaAtlas,
 } from "react-icons/fa";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
@@ -58,6 +59,11 @@ const Dashboard = () => {
                 <li>
                   <NavLink to="/dashboard/addclass">
                     <FaBook></FaBook> Add a Class
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/myclass">
+                    <FaAtlas></FaAtlas> My Classes
                   </NavLink>
                 </li>
               </>
