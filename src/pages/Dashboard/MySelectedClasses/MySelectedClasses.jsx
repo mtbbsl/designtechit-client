@@ -5,8 +5,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const MySelectedClasses = () => {
   const [cart, refetch] = useCart();
-  // console.log(cart);
-  const total = cart.reduce((sum, item) => item.price + sum, 0);
+  // const total = cart.reduce((sum, item) => item.price + sum, 0);
 
   const handleDelete = (item) => {
     Swal.fire({
@@ -42,15 +41,12 @@ const MySelectedClasses = () => {
         heading={"My Selected Classes"}
         subHeading={"Student Dashboard"}
       ></SectionTitle>
-      <div className="uppercase font-semibold h-16 items-center flex justify-between">
-        <h3 className="text-2xl">Total Classes: {cart.length}</h3>
-        <h3 className="text-2xl">Total Price: ${total}</h3>
-      </div>
+      
       <div className="overflow-x-auto">
-        <table className="table">
+        <table className="table table-zebra-zebra">
           <thead>
             {/* Table Heading */}
-            <tr>
+            <tr className="bg-base-300">
               <th>#</th>
               <th>Class</th>
               <th>Class Name</th>
@@ -72,17 +68,17 @@ const MySelectedClasses = () => {
                   </div>
                 </td>
                 <td>{row.name}</td>
-                <td className="text-end">${row.price}</td>
+                <td>${row.price}</td>
                 <td>
                   <button
                     onClick={() => handleDelete(row)}
-                    className="btn btn-secondary btn-xs"
+                    className="btn btn-error btn-xs"
                   >
                     Del
                   </button>
                 </td>
                 <td>
-                  <button className="btn btn-accent btn-xs">Pay</button>
+                  <button className="btn btn-success btn-xs">Pay</button>
                 </td>
               </tr>
             ))}
