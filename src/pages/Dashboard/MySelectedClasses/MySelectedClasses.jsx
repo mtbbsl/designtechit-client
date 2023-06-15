@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const MySelectedClasses = () => {
   const [cart, refetch] = useCart();
@@ -37,6 +38,7 @@ const MySelectedClasses = () => {
       <Helmet>
         <title>Dashboard - Selected Classes</title>
       </Helmet>
+      <SectionTitle heading={"My Selected Classes"} subHeading={"Student Dashboard"}></SectionTitle>
       <div className="uppercase font-semibold h-16 items-center flex justify-between">
         <h3 className="text-2xl">Total Classes: {cart.length}</h3>
         <h3 className="text-2xl">Total Price: ${total}</h3>

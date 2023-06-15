@@ -8,7 +8,8 @@ import {
   FaLaptop,
   FaUser,
   FaUsers,
-  FaSchool
+  FaSchool,
+  FaBook,
 } from "react-icons/fa";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
@@ -45,11 +46,6 @@ const Dashboard = () => {
             {isAdmin ? (
               <>
                 <li>
-                  <NavLink to="/dashboard/adminhome">
-                    <FaHome></FaHome>Admin Home
-                  </NavLink>
-                </li>
-                <li>
                   <NavLink to="/dashboard/manageclass">
                     <FaSchool></FaSchool>Manage Classes
                   </NavLink>
@@ -59,14 +55,14 @@ const Dashboard = () => {
                     <FaUsers></FaUsers>Manage Users
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink to="/dashboard/addclass">
+                    <FaBook></FaBook> Add a Class
+                  </NavLink>
+                </li>
               </>
             ) : (
               <>
-                <li>
-                  <NavLink to="/dashboard/studenthome">
-                    <FaHome></FaHome>Student Home
-                  </NavLink>
-                </li>
                 <li>
                   <NavLink to="/dashboard/myselectedclass">
                     <FaShoppingBag></FaShoppingBag>My Selected Classes

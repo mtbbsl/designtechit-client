@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const ManageUsers = () => {
   const [disabled, setDisabled] = useState(false);
@@ -67,6 +68,7 @@ const ManageUsers = () => {
       <Helmet>
         <title>DesignTechIT - Manage Users</title>
       </Helmet>
+      <SectionTitle heading={"Manage Users"} subHeading={"Admin Dashboard"}></SectionTitle>
       <h3 className="text-2xl font-semibold my-4">
         Total Users: {users.length}
       </h3>
@@ -103,16 +105,16 @@ const ManageUsers = () => {
                   )}
                 </td>
                 <td>
-                    {user.role === "Instructor" ? (
+                  {user.role === "Instructor" ? (
                     "Instructor"
                   ) : (
-                  <button
-                    onClick={() => handleMakeInstructor(user)}
-                    className="btn btn-secondary btn-xs"
-                    disabled={disabled}
-                  >
-                    Make Instructor
-                  </button>
+                    <button
+                      onClick={() => handleMakeInstructor(user)}
+                      className="btn btn-secondary btn-xs"
+                      disabled={disabled}
+                    >
+                      Make Instructor
+                    </button>
                   )}
                 </td>
               </tr>
