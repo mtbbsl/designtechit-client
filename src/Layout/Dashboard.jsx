@@ -21,6 +21,7 @@ const Dashboard = () => {
 
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
+  console.log(isAdmin, isInstructor);
 
   return (
     <div>
