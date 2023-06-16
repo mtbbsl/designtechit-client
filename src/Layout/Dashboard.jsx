@@ -14,13 +14,13 @@ import {
 } from "react-icons/fa";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const Dashboard = () => {
   const [cart] = useCart();
 
-  // TODO: load data from the server to have dynamic isAdmin based on Data
-  // const isAdmin = true;
   const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   return (
     <div>
@@ -56,35 +56,42 @@ const Dashboard = () => {
                     <FaUsers></FaUsers>Manage Users
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="/dashboard/addclass">
-                    <FaBook></FaBook> Add a Class
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/myclass">
-                    <FaAtlas></FaAtlas> My Classes
-                  </NavLink>
-                </li>
               </>
             ) : (
               <>
-                <li>
-                  <NavLink to="/dashboard/myselectedclass">
-                    <FaShoppingBag></FaShoppingBag>My Selected Classes
-                    <span>+{cart?.length || 0}</span>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/myenrolledclass">
-                    <FaImage></FaImage>My Enrolled Classes
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/paymenthistory">
-                    <FaWallet></FaWallet>Payment History
-                  </NavLink>
-                </li>
+                {isInstructor ? (
+                  <>
+                    <li>
+                      <NavLink to="/dashboard/addclass">
+                        <FaBook></FaBook> Add a Class
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/dashboard/myclass">
+                        <FaAtlas></FaAtlas> My Classes
+                      </NavLink>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <NavLink to="/dashboard/myselectedclass">
+                        <FaShoppingBag></FaShoppingBag>My Selected Classes
+                        <span>+{cart?.length || 0}</span>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/dashboard/myenrolledclass">
+                        <FaImage></FaImage>My Enrolled Classes
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/dashboard/paymenthistory">
+                        <FaWallet></FaWallet>Payment History
+                      </NavLink>
+                    </li>
+                  </>
+                )}
               </>
             )}
 
