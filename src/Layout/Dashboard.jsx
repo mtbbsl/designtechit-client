@@ -15,10 +15,12 @@ import {
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
+import useAuth from "../hooks/useAuth";
+import logo from "../assets/others/logo-full.png";
 
 const Dashboard = () => {
   const [cart] = useCart();
-
+  const {user} = useAuth();
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
   console.log(isAdmin, isInstructor);
@@ -44,7 +46,8 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
-
+            <img src={logo} className="w-36 mb-2" />
+            <h2 className="text-xl mb-6">Welcome, {user.displayName}</h2>
             {isAdmin ? (
               <>
                 <li>

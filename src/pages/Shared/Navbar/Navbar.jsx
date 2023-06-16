@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import logomini from "../../../assets/others/logo-mini.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
-import useCart from "../../../hooks/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);

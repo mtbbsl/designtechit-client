@@ -141,7 +141,7 @@ const AddClass = () => {
           </div>
         </div>
 
-        <input className="btn btn-sm mt-4" type="submit" value="Add Class" />
+        <input className="btn btn-md mt-4 mb-10" type="submit" value="Add Class" />
       </form>
     </div>
   );
