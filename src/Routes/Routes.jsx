@@ -15,6 +15,7 @@ import AdminRoute from "./AdminRoute";
 import MyClass from "../pages/Dashboard/MyClass/MyClass";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 import InstructorRoute from "./InstructorRoute";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -52,10 +53,16 @@ export const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      // User Routes
       {
         path: "myselectedclass",
         element: <MySelectedClasses></MySelectedClasses>,
       },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
+      },
+      // Admin Routes
       {
         path: "manageuser",
         element: (
@@ -72,6 +79,7 @@ export const router = createBrowserRouter([
           </AdminRoute>
         ),
       },
+      // Instructor Routes
       {
         path: "addclass",
         element: (

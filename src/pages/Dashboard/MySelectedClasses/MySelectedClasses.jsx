@@ -2,10 +2,11 @@ import { Helmet } from "react-helmet";
 import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import { Link } from "react-router-dom";
 
 const MySelectedClasses = () => {
   const [cart, refetch] = useCart();
-  // const total = cart.reduce((sum, item) => item.price + sum, 0);
+  const total = cart.reduce((sum, item) => item.price + sum, 0);
 
   const handleDelete = (item) => {
     Swal.fire({
@@ -41,7 +42,14 @@ const MySelectedClasses = () => {
         heading={"My Selected Classes"}
         subHeading={"Student Dashboard"}
       ></SectionTitle>
-      
+
+      <div className="font-semibold h-20 flex justify-stretch gap-6 items-center">
+        <h3 className="text-2xl">Total Items: {cart.length}</h3>
+        <h3 className="text-2xl">Total Price: ${total}</h3>
+        <Link to="/dashboard/payment">
+          <button className="btn btn-success btn-sm">PAY</button>
+        </Link>
+      </div>
       <div className="overflow-x-auto">
         <table className="table table-zebra-zebra">
           <thead>
@@ -78,7 +86,9 @@ const MySelectedClasses = () => {
                   </button>
                 </td>
                 <td>
-                  <button className="btn btn-success btn-xs">Pay</button>
+                  <Link to="/dashboard/payment">
+                    <button className="btn btn-success btn-xs">Pay</button>
+                  </Link>
                 </td>
               </tr>
             ))}
