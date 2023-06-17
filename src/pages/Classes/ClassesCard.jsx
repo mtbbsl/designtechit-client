@@ -3,6 +3,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 const ClassesCard = ({ item }) => {
   const { image, name, instructor, price, _id } = item;
@@ -10,10 +12,12 @@ const ClassesCard = ({ item }) => {
   const [, refetch] = useCart();
   const navigate = useNavigate();
   const location = useLocation();
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
-  const handleSelect = (item) => {
-    console.log(item);
-    if (user && user.email) {
+  const handleSelect = () => {
+    // console.log(item);
+    if (user && user?.email) {
       const cartItem = {classItemId: _id, name, image, price, instructor, email: user.email}
       fetch("https://designtechit-server.vercel.app/carts", {
         method: "POST",
@@ -64,6 +68,7 @@ const ClassesCard = ({ item }) => {
           <button
             onClick={() => handleSelect(item)}
             className="btn btn-outline"
+            disabled={isAdmin || isInstructor}
           >
             Select
           </button>

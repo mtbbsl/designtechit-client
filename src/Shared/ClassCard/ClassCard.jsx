@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const ClassCard = ({ perClass }) => {
   const { image, name, instructor, price } = perClass;
@@ -12,11 +12,11 @@ const ClassCard = ({ perClass }) => {
         <h2 className="card-title">Class Name: {name}</h2>
         <p>Instructor: {instructor}</p>
         <p>Price: ${price}</p>
-        <div className="card-actions justify-end">
+        {/* <div className="card-actions justify-end">
           <Link to="/enroll">
             <button className="btn btn-outline">Enroll</button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

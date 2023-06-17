@@ -7,6 +7,10 @@ const axiosSecure = axios.create({
   baseURL: "http://localhost:5000/",
 });
 
+// const axiosSecure = axios.create({
+//   baseURL: "https://designtechit-server-mtbbsl.vercel.app/",
+// });
+
 const useAxiosSecure = () => {
   const { logOut } = useAuth();
   const navigate = useNavigate();

@@ -23,7 +23,7 @@ const Dashboard = () => {
   const {user} = useAuth();
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
-  console.log(isAdmin, isInstructor);
+  // console.log(isAdmin, isInstructor);
 
   return (
     <div>
